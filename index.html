@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cajero Automático Avanzado</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="atm-frame">
+        <div class="login-container" id="login-container">
+            <h1>Inicio de Sesión</h1>
+            <input type="text" id="username" placeholder="Usuario" />
+            <input type="password" id="password" placeholder="Contraseña" />
+            <button onclick="login()">Iniciar Sesión</button>
+            <div id="login-message"></div>
+        </div>
+
+        <div class="atm-container" id="atm-container" style="display: none;">
+            <h1>Cajero Automático</h1>
+            <div class="screen">
+                <div id="message">Bienvenido</div>
+                <div class="balance" id="balance"></div>
+            </div>
+            <div class="buttons">
+                <button onclick="checkBalance()">Consultar Saldo</button>
+                <button onclick="deposit()">Depositar</button>
+                <button onclick="withdraw()">Retirar</button>
+                <button onclick="showTransfer()">Transferir</button>
+                <button onclick="showTransactions()">Historial de Transacciones</button>
+                <button onclick="logout()">Cerrar Sesión</button>
+            </div>
+            <div class="input-field">
+                <input type="number" id="amount" placeholder="Monto" />
+            </div>
+            <div class="transfer-field" id="transfer-field" style="display: none;">
+                <select id="recipient">
+                    <option value="">Seleccionar Destinatario</option>
+                </select>
+                <input type="password" id="pin" placeholder="PIN de Confirmación" />
+                <button onclick="transfer()">Transferir</button>
+            </div>
+            <div class="transaction-history" id="transaction-history" style="display: none;">
+                <h2>Historial de Transacciones</h2>
+                <ul id="transactions-list"></ul>
+            </div>
+        </div>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
